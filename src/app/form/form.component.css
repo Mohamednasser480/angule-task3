@@ -1,0 +1,11 @@
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li{
+    padding: 20px 30px;
+}
+ul{
+    padding:0px ;
+}

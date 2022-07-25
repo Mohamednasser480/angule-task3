@@ -1,0 +1,23 @@
+<form class="d-flex w-50 m-auto my-5 align-items-center" [formGroup]="todo" (ngSubmit)="addTodo(todo)">
+    <div class="container">
+        <input  [ngClass]=" {'border-danger': todo.get('todoInput')?.errors!=null && todo.get('todoInput')?.touched}"
+         type="text" name="todo" class="form-control p-3" formControlName = "todoInput">
+    </div>
+    <div>
+        <button class="btn btn-info px-5 py-3" [disabled]="todo.invalid">Add</button>
+     </div>
+</form>
+<div class="w-50 m-auto" *ngIf="todos.length">
+    <input class="w-100 form-control p-3 m-2" type="search" name="" id="" placeholder="Filter" [(ngModel)]="filter" (keyup)="filterHandler()">
+    <p class="text-end">There are {{display.length}} todos </p>
+    <ul>
+        <li class="todo-item border" *ngFor="let item of display">
+            <span class="col-2">{{item}}</span>
+            <app-stars></app-stars>
+            <button class="btn btn-danger" (click)="completeTodo(item)">Complete</button>
+        </li>
+    </ul>
+</div>
+
+
+

@@ -1,0 +1,4 @@
+.selected , i:hover{
+    color: gold;
+    transition: all 0.4s;
+}

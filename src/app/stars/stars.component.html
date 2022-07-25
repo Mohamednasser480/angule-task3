@@ -1,0 +1,8 @@
+<div class="container" >
+        <i class="fa-solid fa-star" [ngClass]="{'selected': item < hoverd ||  item <= selected}" *ngFor="let item of stars" 
+          id=items{{item}}
+          (mouseover)="select(item)"
+          (mouseleave)="unselect()"
+          (click)="onclick(item)"
+          ></i>
+</div>
